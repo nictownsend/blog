@@ -1,8 +1,8 @@
 ---
 title: "First Entry"
 date: 2023-10-13
+layout: post
 ---
-
 > _if I have seen further [than others], it is by standing on the shoulders of giants._ 
 
 Or in other words - thanks to [https://github.com/skills/github-pages](https://github.com/skills/github-pages) for a quick and easy bootstrapping of this blog!
