@@ -28,7 +28,16 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      {{ content }}
+      <h1>Latest Posts</h1>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      {{ post.excerpt }}
+    </li>
+  {% endfor %}
+</ul>
 
       <footer class="site-footer">
         {% if site.github.is_project_page %}
