@@ -1,6 +1,6 @@
 ---
 title: "First Entry"
-date: 2023-10-12
+date: 2023-10-13
 ---
 
 > _if I have seen further [than others], it is by standing on the shoulders of giants._ 
