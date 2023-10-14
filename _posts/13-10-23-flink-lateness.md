@@ -1,6 +1,7 @@
 ---
 title: "How do out-of-order events affect Flink timely processing?"
 date: 2023-10-13
+layout: post
 ---
 
 When I first started to explore Flink, I began with the SQL interfaces. I'm lazy; the SQL client makes it incredibly easy to get started without needing to setup an IDE and work with the Flink Java libraries.
