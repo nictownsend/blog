@@ -1,6 +1,6 @@
 ---
 title: "Exploring how Flink handles late events"
-date: 2023-10-18
+date: 2023-10-17
 layout: post
 ---
 ## Watermarks
