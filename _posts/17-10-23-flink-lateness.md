@@ -2,6 +2,7 @@
 title: "Exploring how Flink handles late events"
 date: 2023-10-17
 layout: post
+description: Flink has a concept of time that is not always the same as real world time. This article is exploring what causes an event to be considered late and how Flink jobs take account of lateness.
 ---
 ## Watermarks
 
