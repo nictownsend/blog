@@ -4,6 +4,13 @@ date: 2023-10-17
 layout: post
 description: Flink has a concept of time that is not always the same as real world time. This article is exploring what causes an event to be considered late and how Flink jobs take account of lateness.
 ---
+
+## Introduction
+
+An Event Stream can be thought of as a `First In, First Out` structure - a producer adds events to the end of a stream, and a consumer can start at the earliest event and consume newer messages in the order they arrived on the stream.
+
+![FIFO queue event stream](/images/flink_lateness/overview.png)
+
 ## Watermarks
 
 https://nightlies.apache.org/flink/flink-docs-release-1.17/docs/concepts/time/#event-time-and-watermarks
@@ -11,6 +18,10 @@ https://nightlies.apache.org/flink/flink-docs-release-1.17/docs/concepts/time/#e
 > A Watermark(t) declares that event time has reached time t in that stream, meaning that there should be no more elements from the stream with a timestamp `t’ <= t`.
 
 As events are consumed from a stream, Flink is tracking the _latest_ event time seen. Or in epoch terms, Flink is tracking the _largest_ epoch number seen. This does not mean that a watermark progresses in system clock time - if a Flink job does not receive an event for 5 "real" minutes, the watermark remains unchanged. Only a new event can progress the watermark. In addition - event time does not have to map directly to the system clock.
+
+Flink attaches the watermark to each event as it is consumed.
+
+![Event stream with the latest watermark as metadata for each event](/images/flink_lateness/watermarking.png)
 
 _Side note - if you placed a stick in the sea at low tide and then returned the next day - during high tide the water would have risen and marked a higher level - literally a water mark._
 
